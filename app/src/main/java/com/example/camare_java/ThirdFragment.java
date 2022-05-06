@@ -12,7 +12,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.camare_java.databinding.DescriptionBinding;
 import com.example.camare_java.databinding.FragmentSecondBinding;
 
-public class SecondFragment extends Fragment {
+public class ThirdFragment extends Fragment {
 
     private FragmentSecondBinding binding;
     private DescriptionBinding descriptionBinding;
@@ -50,7 +50,8 @@ public class SecondFragment extends Fragment {
         descriptionBinding.chooseLens.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                requireActivity().onBackPressed();
+                NavHostFragment.findNavController(ThirdFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
         });
     }
